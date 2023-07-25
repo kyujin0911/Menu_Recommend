@@ -1,0 +1,31 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/random_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A9CD34"
+    >
+
+    <Button
+        android:id="@+id/group_18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="197dp"
+        android:layout_marginTop="522dp"
+        android:background="@drawable/group_18"></Button>
+
+    <Button
+        android:id="@+id/group_16"
+        android:layout_width="179dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="607dp"
+        android:layout_marginRight="90dp"
+        android:background="@drawable/group_16" />
+</RelativeLayout>
+
