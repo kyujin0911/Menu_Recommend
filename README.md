@@ -16,6 +16,8 @@
 메뉴를 랜덤하게 추천해주거나 목록을 보여주어 메뉴 선택에 도움이 되고자 함.
 
 ### 사용자 UI
+<img width="450" alt="스크린샷 2023-07-25 오후 7 30 54" src="https://github.com/kyujin0911/Menu_Recommend/assets/25702499/349b00cc-e172-4ddb-bd0e-9e9ce79e48d8">
+
 
 
 
