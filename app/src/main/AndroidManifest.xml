@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MenuRecommend"
         tools:targetApi="31">
         <activity
-            android:name=".Random_Menu"
+            android:name=".RandomMenu"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

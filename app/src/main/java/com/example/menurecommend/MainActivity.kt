@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.menurecommend.databinding.ActivityMainBinding
 
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.toRandomMenuBtn.setOnClickListener {
-            var intent = Intent(this, Random_Menu::class.java)
+            var intent = Intent(this, RandomMenu::class.java)
 
             startActivity(intent)
         }
