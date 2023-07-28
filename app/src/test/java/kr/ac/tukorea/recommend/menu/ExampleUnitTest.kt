@@ -1,4 +1,4 @@
-package com.example.menurecommender
+package kr.ac.tukorea.recommend.menu
 
 import org.junit.Test
 
