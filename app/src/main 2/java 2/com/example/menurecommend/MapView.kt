@@ -25,6 +25,7 @@ class MapView : AppCompatActivity() {
         val lati = intent.getDoubleExtra("lati", 0.0)
         val long = intent.getDoubleExtra("long", 0.0)
         val marker = Marker()
+        val markerSchool = Marker()
         val cameraUpdate = CameraUpdate.scrollTo(LatLng(lati, long))
         val fm = supportFragmentManager
         val mapFragment = fm.findFragmentById(R.id.navermap) as MapFragment?

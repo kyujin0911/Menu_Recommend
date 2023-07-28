@@ -22,6 +22,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.goToDdabongdor.setOnClickListener {
+            var intent = Intent(this, Ddabongdor::class.java)
+
+            startActivity(intent)
+        }
+
 
     }
 }

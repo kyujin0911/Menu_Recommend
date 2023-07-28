@@ -21,7 +21,8 @@ data class Res(
     var Latitude: Double? = null,
     var Longitude: Double? = null,
     var rate: Double? = null,
-    var review_count: Int? = null
+    var review_count: Int? = null,
+    var ddabong: Int? = null
 )
 
 class RandomMenu : AppCompatActivity() {
@@ -89,7 +90,6 @@ class RandomMenu : AppCompatActivity() {
         binding.checkDe.setOnCheckedChangeListener(listener)
         binding.checkGi.setOnCheckedChangeListener(listener)
 
-
         binding.btnRandom.setOnClickListener {
             if (checked_category.isNotEmpty()
             ) {
@@ -99,7 +99,9 @@ class RandomMenu : AppCompatActivity() {
 
                 randomIndex = findIndex.random()
                 val res = res_arr[randomIndex]
-                binding.menu.setText("${res?.name}\n${res?.category}\n${res?.address}\n${res?.rate}\n${res?.review_count}")
+                binding.btnRandom.setText("${res?.name}\n${res?.category}\n${res?.address}\n")
+                binding.reviewtextview.setText("(${res?.review_count})")
+                binding.startextview.setText("${res?.rate}")
                 binding.goToNavermapBtn.isEnabled = true
             } else{
                 Toast.makeText(this, "체크박스를 선택해주세요.", Toast.LENGTH_SHORT).show()

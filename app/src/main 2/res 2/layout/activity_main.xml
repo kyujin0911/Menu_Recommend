@@ -6,14 +6,6 @@
     android:background="#FFF5EDDC"
     android:clipToOutline="true">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/testText"
-        android:gravity="center"
-        android:text="test">
-
-    </TextView>
 
     <LinearLayout
         android:id="@+id/title"
@@ -57,6 +49,12 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/button2"/>
+
+        <Button
+            android:id="@+id/goToDdabongdor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="따봉도르"/>
 
     </LinearLayout>
 
