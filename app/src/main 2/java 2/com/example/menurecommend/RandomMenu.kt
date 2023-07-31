@@ -30,7 +30,7 @@ class RandomMenu : AppCompatActivity() {
     val TAG = "Random"
     var res_arr = mutableListOf<Res>()
     var checked_category = arrayListOf<String>()
-    var index = 0
+
 
     var res: Res? = null
 
@@ -44,7 +44,7 @@ class RandomMenu : AppCompatActivity() {
         binding.ddabongBtn.isEnabled = false
 
         for (i in 0 until 287) {
-            val myRef = db.getReference("ResData/$i")
+            val myRef = db.getReference("ResData/${i}")
             myRef.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val value = dataSnapshot.getValue(Res::class.java)
@@ -86,9 +86,14 @@ class RandomMenu : AppCompatActivity() {
             }
         }
 
-        // Repeat this for all checkboxes
         binding.checkHan.setOnCheckedChangeListener(listener)
-        // ...
+        binding.checkIl.setOnCheckedChangeListener(listener)
+        binding.checkJung.setOnCheckedChangeListener(listener)
+        binding.checkYang.setOnCheckedChangeListener(listener)
+        binding.checkFast.setOnCheckedChangeListener(listener)
+        binding.checkDe.setOnCheckedChangeListener(listener)
+        binding.checkGi.setOnCheckedChangeListener(listener)
+
 
         binding.btnRandom.setOnClickListener {
             if (checked_category.isNotEmpty()) {
@@ -119,7 +124,7 @@ class RandomMenu : AppCompatActivity() {
                         Log.d(TAG, "Failed to update data: ${it.message}")
                     }
             } ?: run {
-                Toast.makeText(this, "아직 추첨이 되지 않았습니다. 추첨버튼을 눌러주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "추천 버튼부터", Toast.LENGTH_SHORT).show()
             }
         }
 
