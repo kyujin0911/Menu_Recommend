@@ -107,7 +107,11 @@ class RandomMenu : AppCompatActivity() {
                 binding.startextview.setText("${res?.rate}")
                 binding.goToNavermapBtn.isEnabled = true
             } else{
-                Toast.makeText(this, "체크박스를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                res = res_arr.random()
+                binding.btnRandom.setText("${res?.name}\n${res?.category}\n${res?.address}\n")
+                binding.reviewtextview.setText("(${res?.review_count})")
+                binding.startextview.setText("${res?.rate}")
+                binding.goToNavermapBtn.isEnabled = true
             }
         }
 
@@ -124,7 +128,7 @@ class RandomMenu : AppCompatActivity() {
                         Log.d(TAG, "Failed to update data: ${it.message}")
                     }
             } ?: run {
-                Toast.makeText(this, "추천 버튼부터", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "메뉴 추첨 버튼부터 눌러주세요!", Toast.LENGTH_SHORT).show()
             }
         }
 
