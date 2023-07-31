@@ -109,6 +109,7 @@ class RandomMenu : AppCompatActivity() {
             binding.reviewtextview.setText("(${res?.review_count})")
             binding.startextview.setText("${res?.rate}")
             binding.goToNavermapBtn.isEnabled = true
+            binding.ddabongBtn.isEnabled = true
         }
 
         binding.ddabongBtn.setOnClickListener {
@@ -119,6 +120,7 @@ class RandomMenu : AppCompatActivity() {
                     .addOnSuccessListener {
                         Toast.makeText(this, "따봉~", Toast.LENGTH_SHORT).show()
                         Log.d(TAG, "${currentRes.index},${currentRes.name}")
+                        binding.ddabongBtn.isEnabled = false
                     }
                     .addOnFailureListener {
                         Log.d(TAG, "Failed to update data: ${it.message}")
