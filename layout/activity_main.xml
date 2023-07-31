@@ -6,6 +6,55 @@
     android:background="#FFF5EDDC"
     android:clipToOutline="true">
 
+    <TextView
+        android:id="@+id/idText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id :"
+        android:padding="3dp"
+        android:visibility="invisible">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/accountLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newMembershipButtonInMain"
+            android:padding="3dp"
+            android:text="회원가입">
+
+        </Button>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/loginButtonInMain"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="로그인">
+
+        </Button>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:id="@+id/logout"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="로그아웃"
+        android:visibility="invisible">
+
+    </Button>
+
+
     <LinearLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -47,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/button2"></Button>
+            android:background="@drawable/button2"/>
 
     </LinearLayout>
 
