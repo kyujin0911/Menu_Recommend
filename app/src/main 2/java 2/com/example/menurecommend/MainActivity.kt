@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.menurecommend.databinding.ActivityMainBinding
-import com.naver.maps.map.NaverMapSdk
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +17,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.toRandomMenuBtn.setOnClickListener {
             var intent = Intent(this, RandomMenu::class.java)
+
+            startActivity(intent)
+        }
+
+        binding.toSortMenuBtn.setOnClickListener {
+            var intent = Intent(this, SortActivity::class.java)
 
             startActivity(intent)
         }

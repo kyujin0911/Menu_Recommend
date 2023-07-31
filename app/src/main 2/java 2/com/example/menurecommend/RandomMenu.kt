@@ -11,8 +11,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.naver.maps.map.MapFragment
-import com.naver.maps.map.NaverMapSdk
 
 data class Res(
     var name: String? = null,
@@ -22,7 +20,8 @@ data class Res(
     var Longitude: Double? = null,
     var rate: Double? = null,
     var review_count: Int? = null,
-    var ddabong: Int? = null
+    var ddabong: Int = 0,
+    var index: Int = 0
 )
 
 class RandomMenu : AppCompatActivity() {
@@ -32,30 +31,32 @@ class RandomMenu : AppCompatActivity() {
     var res_arr = mutableListOf<Res>()
     var checked_category = arrayListOf<String>()
     var index = 0
-    var randomIndex = 0
 
+    var res: Res? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRandomMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.btnRandom.isEnabled = false
         binding.goToNavermapBtn.isEnabled = false
-        while (index < 220) {
-            val myRef = db.getReference("RestaurantData/${index++}")
+        binding.ddabongBtn.isEnabled = false
+
+        for (i in 0 until 287) {
+            val myRef = db.getReference("ResData/$i")
             myRef.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val value = dataSnapshot.getValue(Res::class.java)
-                    value?.let {
-                        res_arr.add(it)
-                        if (res_arr.size == 220){
+                    value?.let { res ->
+                        res.index = i
+                        res_arr.add(res)
+                        if (res_arr.size == 287) {
                             binding.btnRandom.isEnabled = true
+                            binding.ddabongBtn.isEnabled = true
                             Log.d(TAG, "Data Load Finished")
                         }
                     }
-
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -64,7 +65,8 @@ class RandomMenu : AppCompatActivity() {
                 }
             })
         }
-        var listener = CompoundButton.OnCheckedChangeListener { buttonView, iscChecked ->
+
+        var listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             val category = when(buttonView.id) {
                 R.id.check_han -> "한식"
                 R.id.check_il -> "일식"
@@ -75,30 +77,26 @@ class RandomMenu : AppCompatActivity() {
                 R.id.check_gi -> "기타"
                 else -> return@OnCheckedChangeListener
             }
-            if(iscChecked){
+
+            if(isChecked){
                 checked_category.add(category)
             }
             else{
                 checked_category.remove(category)
             }
         }
+
+        // Repeat this for all checkboxes
         binding.checkHan.setOnCheckedChangeListener(listener)
-        binding.checkIl.setOnCheckedChangeListener(listener)
-        binding.checkJung.setOnCheckedChangeListener(listener)
-        binding.checkYang.setOnCheckedChangeListener(listener)
-        binding.checkFast.setOnCheckedChangeListener(listener)
-        binding.checkDe.setOnCheckedChangeListener(listener)
-        binding.checkGi.setOnCheckedChangeListener(listener)
+        // ...
 
         binding.btnRandom.setOnClickListener {
-            if (checked_category.isNotEmpty()
-            ) {
+            if (checked_category.isNotEmpty()) {
                 var findIndex = arrayListOf<Int>()
                 res_arr.indices.filter { res_arr[it].category in checked_category }
                     .forEach { findIndex.add(it) }
 
-                randomIndex = findIndex.random()
-                val res = res_arr[randomIndex]
+                res = res_arr[findIndex.random()]
                 binding.btnRandom.setText("${res?.name}\n${res?.category}\n${res?.address}\n")
                 binding.reviewtextview.setText("(${res?.review_count})")
                 binding.startextview.setText("${res?.rate}")
@@ -106,18 +104,34 @@ class RandomMenu : AppCompatActivity() {
             } else{
                 Toast.makeText(this, "체크박스를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }
+        }
 
+        binding.ddabongBtn.setOnClickListener {
+            res?.let { currentRes ->
+                val ddabong_cnt = currentRes.ddabong + 1
+                val temp = db.getReference("ResData/${currentRes.index}")
+                temp.updateChildren(mapOf("ddabong" to ddabong_cnt))
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "따봉~", Toast.LENGTH_SHORT).show()
+                        Log.d(TAG, "${currentRes.index},${currentRes.name}")
+                    }
+                    .addOnFailureListener {
+                        Log.d(TAG, "Failed to update data: ${it.message}")
+                    }
+            } ?: run {
+                Toast.makeText(this, "아직 추첨이 되지 않았습니다. 추첨버튼을 눌러주세요.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.goToNavermapBtn.setOnClickListener {
-            var intent = Intent(this, MapView::class.java)
-            Log.d(TAG, "${res_arr[randomIndex].Latitude},${res_arr[randomIndex].Longitude}")
-            intent.putExtra("name", res_arr[randomIndex].name)
-            intent.putExtra("lati", res_arr[randomIndex].Latitude)
-            intent.putExtra("long", res_arr[randomIndex].Longitude)
-            startActivity(intent)
+            res?.let { currentRes ->
+                val intent = Intent(this, MapView::class.java)
+                Log.d(TAG, "${currentRes.Latitude},${currentRes.Longitude}")
+                intent.putExtra("name", currentRes.name)
+                intent.putExtra("lati", currentRes.Latitude)
+                intent.putExtra("long", currentRes.Longitude)
+                startActivity(intent)
+            }
         }
-
-
     }
 }

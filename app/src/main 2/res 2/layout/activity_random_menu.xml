@@ -62,6 +62,18 @@
         android:textSize="17dp"
         android:elevation="4dp"></Button>
 
+
+
+
+    <Button
+        android:id="@+id/ddabong_btn"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_random"
+        android:layout_alignLeft="@+id/btn_random"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ddabong"></Button>
+
     <Button
         android:id="@+id/goToNavermap_btn"
         android:layout_width="wrap_content"
