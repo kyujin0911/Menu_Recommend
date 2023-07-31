@@ -102,17 +102,13 @@ class RandomMenu : AppCompatActivity() {
                     .forEach { findIndex.add(it) }
 
                 res = res_arr[findIndex.random()]
-                binding.btnRandom.setText("${res?.name}\n${res?.category}\n${res?.address}\n")
-                binding.reviewtextview.setText("(${res?.review_count})")
-                binding.startextview.setText("${res?.rate}")
-                binding.goToNavermapBtn.isEnabled = true
             } else{
                 res = res_arr.random()
-                binding.btnRandom.setText("${res?.name}\n${res?.category}\n${res?.address}\n")
-                binding.reviewtextview.setText("(${res?.review_count})")
-                binding.startextview.setText("${res?.rate}")
-                binding.goToNavermapBtn.isEnabled = true
             }
+            binding.btnRandom.setText("${res?.name}\n${res?.category}\n${res?.address}\n")
+            binding.reviewtextview.setText("(${res?.review_count})")
+            binding.startextview.setText("${res?.rate}")
+            binding.goToNavermapBtn.isEnabled = true
         }
 
         binding.ddabongBtn.setOnClickListener {
