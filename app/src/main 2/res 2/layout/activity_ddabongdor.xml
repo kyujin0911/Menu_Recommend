@@ -43,8 +43,7 @@
         android:text="가게 정보"
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImage"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage" />
 
 
     <ImageView
@@ -57,8 +56,7 @@
         android:src="@drawable/ddatino"
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImage"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -72,8 +70,7 @@
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="@+id/firstgrade"
         app:layout_constraintTop_toTopOf="@+id/firstgrade"
-        app:layout_constraintVertical_bias="0.875"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.875" />
 
     <TextView
         android:id="@+id/textView9"
@@ -86,8 +83,7 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/firstgrade"
         app:layout_constraintStart_toStartOf="@+id/firstgrade"
-        app:layout_constraintTop_toBottomOf="@+id/firstDdabong"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/firstDdabong" />
 
     <TextView
         android:id="@+id/secondDdabong"
@@ -101,8 +97,7 @@
         android:text="가게 정보"
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-        app:layout_constraintTop_toBottomOf="@+id/firstgrade"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/firstgrade" />
 
     <ImageView
         android:id="@+id/secondgrade"
@@ -115,8 +110,7 @@
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
         app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-        app:layout_constraintTop_toBottomOf="@+id/firstgrade"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/firstgrade" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -130,8 +124,7 @@
         app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="@+id/secondgrade"
         app:layout_constraintTop_toTopOf="@+id/secondgrade"
-        app:layout_constraintVertical_bias="0.812"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.812" />
 
     <TextView
         android:id="@+id/textView7"
@@ -144,8 +137,7 @@
         app:layout_constraintEnd_toEndOf="@+id/secondgrade"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/secondgrade"
-        app:layout_constraintTop_toBottomOf="@+id/secondDdabong"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/secondDdabong" />
 
     <TextView
         android:id="@+id/thirdDdabong"
@@ -159,8 +151,7 @@
         android:text="가게 정보"
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-        app:layout_constraintTop_toBottomOf="@+id/secondgrade"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/secondgrade" />
 
     <ImageView
         android:id="@+id/thirdgrade"
@@ -172,8 +163,7 @@
         android:src="@drawable/tinoo"
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-        app:layout_constraintTop_toBottomOf="@+id/secondgrade"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/secondgrade" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -187,8 +177,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/thirdgrade"
         app:layout_constraintTop_toTopOf="@+id/thirdgrade"
-        app:layout_constraintVertical_bias="0.772"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.772" />
 
     <TextView
         android:id="@+id/textView8"
@@ -200,8 +189,7 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/thirdgrade"
         app:layout_constraintStart_toStartOf="@+id/thirdgrade"
-        app:layout_constraintTop_toBottomOf="@+id/thirdDdabong"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/thirdDdabong" />
 
 
     <!-- Other views follow a similar pattern, using layout constraints to position each one -->
