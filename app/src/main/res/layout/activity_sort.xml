@@ -5,27 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/menu_background"
-    android:padding="20dp"
-    tools:context=".SortActivity">
+    android:padding="15dp"
+    tools:context=".MenuListActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/menu_list_view"
+        android:id="@+id/Ddabong_title_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_rectangle"
+        android:background="@drawable/sort_title_layout_rectangle"
         android:padding="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/sortListLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/menu_list_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_rectangle"
+            android:background="@drawable/sort_title_layout_rectangle"
             android:gravity="center"
             android:text="메뉴목록"
             android:textColor="@color/black"
@@ -44,7 +43,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/menu_list_textView"
             app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toStartOf="@id/menu_list_view"
+            app:layout_constraintStart_toStartOf="@id/Ddabong_title_text_view"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -53,13 +52,13 @@
         android:id="@+id/sortListLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/round_rectangle2"
+        android:background="@drawable/sort_layout_rectangle"
         android:layout_marginTop="20dp"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menu_list_view"
+        app:layout_constraintTop_toBottomOf="@id/Ddabong_title_text_view"
         app:layout_constraintVertical_bias="1.0">
 
         <RadioGroup
@@ -98,7 +97,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            android:background="@drawable/round_rectangle2"
+            android:background="@drawable/sort_layout_rectangle"
             android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/sortListLayout"
             app:layout_constraintEnd_toEndOf="@id/sortListLayout"
@@ -116,15 +115,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:listitem="@layout/item_restaurant"/>
-            <!--TextView
-                android:id="@+id/test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="예시"
-                app:layout_constraintBottom_toBottomOf="@id/sortListInnerLayout"
-                app:layout_constraintEnd_toEndOf="@id/sortListInnerLayout"
-                app:layout_constraintStart_toStartOf="@id/sortListInnerLayout"
-                app:layout_constraintTop_toTopOf="@id/sortListInnerLayout" /!-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

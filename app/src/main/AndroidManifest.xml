@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +15,16 @@
         android:theme="@style/Theme.Menu_recommend"
         tools:targetApi="31">
         <activity
-            android:name=".SortActivity"
+            android:name=".DdabongdorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RandomMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuListActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -23,6 +35,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="tazl55lszq" />
     </application>
 
 </manifest>

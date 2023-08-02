@@ -1,15 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/main_background"
+    android:clipToOutline="true"
+    android:padding="15dp">
 
-   <Button
-       android:id="@+id/goSort"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       tools:ignore="MissingConstraints" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main_title_text_view"
+        android:background="@drawable/item_restaurant_rectangle"
+        android:padding="10dp"
+        android:elevation="15dp"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/leftTino"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/tino"
+            app:layout_constraintBottom_toBottomOf="@id/mainTitle"
+            app:layout_constraintEnd_toStartOf="@id/mainTitle"
+            app:layout_constraintStart_toStartOf="@id/mainTitleTextView"
+            app:layout_constraintTop_toTopOf="@id/mainTitle" />
+
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="점 메 추"
+            android:textColor="@color/main_title_color"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/rightTino"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleX="-1"
+            android:src="@drawable/tino"
+            app:layout_constraintBottom_toBottomOf="@id/mainTitle"
+            app:layout_constraintEnd_toEndOf="@id/mainTitleTextView"
+            app:layout_constraintStart_toEndOf="@id/mainTitle"
+            app:layout_constraintTop_toTopOf="@id/mainTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/randomButton"
+        style="@style/main_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main_title_text_view"
+        android:background="@drawable/item_restaurant_rectangle"
+        android:elevation="15dp"
+        android:text="랜덤 추천"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainTitleTextView" />
+
+    <Button
+        android:id="@+id/menuListButton"
+        style="@style/main_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main_title_text_view"
+        android:background="@drawable/item_restaurant_rectangle"
+        android:elevation="15dp"
+        android:text="메뉴 목록"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/randomButton"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
