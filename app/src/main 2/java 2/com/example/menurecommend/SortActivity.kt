@@ -26,7 +26,7 @@ class SortActivity : AppCompatActivity() {
         binding = ActivitySortBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        database.getReference("RestaurantData")
+        database.getReference("ResData")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     restaurants.clear()

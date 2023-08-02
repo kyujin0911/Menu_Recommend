@@ -23,20 +23,20 @@ class Ddabongdor : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        while (index < 287) {
+        while (index < 284) {
             val myRef = db.getReference("ResData/${index++}")
             myRef.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val value = dataSnapshot.getValue(Res::class.java)
                     value?.let {
                         res_arr.add(it)
-                        if (res_arr.size == 287){
+                        if (res_arr.size == 284){
                             Log.d(TAG, "Data Load Finished")
-                            Log.d(TAG, "${res_arr[0]},${res_arr[286]}")
+                            Log.d(TAG, "${res_arr[0]},${res_arr[283]}")
                             res_arr.sortWith(compareBy<Res>{it.ddabong}.thenBy {it.name})
-                            binding.firstDdabong.setText("${res_arr[286]?.name}\n${res_arr[286]?.category}\n")
-                            binding.secondDdabong.setText("${res_arr[285]?.name}\n${res_arr[285]?.category}\n")
-                            binding.thirdDdabong.setText("${res_arr[284]?.name}\n${res_arr[284]?.category}\n")
+                            binding.firstDdabong.setText("${res_arr[283]?.name}\n${res_arr[283]?.category}\n")
+                            binding.secondDdabong.setText("${res_arr[282]?.name}\n${res_arr[282]?.category}\n")
+                            binding.thirdDdabong.setText("${res_arr[281]?.name}\n${res_arr[281]?.category}\n")
                         }
                     }
 

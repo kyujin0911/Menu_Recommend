@@ -7,5 +7,8 @@ data class RestaurantItem(
     val rate: Double? = null,
     val review_count: Int? = null,
     val Latitude: Double? = null,
-    val Longitude: Double? = null
+    val Longitude: Double? = null,
+    var ddabong: Int = 0,
+    var index: Int = 0
+
 )

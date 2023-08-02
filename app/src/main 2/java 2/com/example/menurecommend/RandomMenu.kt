@@ -43,7 +43,7 @@ class RandomMenu : AppCompatActivity() {
         binding.goToNavermapBtn.isEnabled = false
         binding.ddabongBtn.isEnabled = false
 
-        for (i in 0 until 287) {
+        for (i in 0 until 284) {
             val myRef = db.getReference("ResData/${i}")
             myRef.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -51,7 +51,7 @@ class RandomMenu : AppCompatActivity() {
                     value?.let { res ->
                         res.index = i
                         res_arr.add(res)
-                        if (res_arr.size == 287) {
+                        if (res_arr.size == 284) {
                             binding.btnRandom.isEnabled = true
                             binding.ddabongBtn.isEnabled = true
                             Log.d(TAG, "Data Load Finished")
