@@ -6,66 +6,7 @@
     android:background="#FFF5EDDC"
     android:clipToOutline="true">
 
-    <TextView
-<<<<<<< HEAD:layout/activity_main.xml
-        android:id="@+id/idText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="id :"
-        android:padding="3dp"
-        android:visibility="invisible">
 
-    </TextView>
-
-    <LinearLayout
-        android:id="@+id/accountLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/newMembershipButtonInMain"
-            android:padding="3dp"
-            android:text="회원가입">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/loginButtonInMain"
-            android:gravity="center"
-            android:padding="3dp"
-            android:text="로그인">
-
-        </Button>
-
-    </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:id="@+id/logout"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="로그아웃"
-        android:visibility="invisible">
-
-    </Button>
-
-
-=======
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/testText"
-        android:gravity="center"
-        android:text="test">
-
-    </TextView>
-
->>>>>>> f893a5b958eee2049c06db8bfb391996f262e874:app/src/main/res/layout/activity_main.xml
     <LinearLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -108,6 +49,12 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/button2"/>
+
+        <Button
+            android:id="@+id/goToDdabongdor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="따봉도르"/>
 
     </LinearLayout>
 
