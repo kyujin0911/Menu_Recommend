@@ -6,21 +6,24 @@ import android.os.Bundle
 import com.example.menurecommend.databinding.ActivityMainBinding
 
 
-
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-
+    lateinit var binding: ActivityMainBinding
+    lateinit var iintent: Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.toRandomMenuBtn.setOnClickListener {
-            var intent = Intent(this, RandomMenu::class.java)
-
-            startActivity(intent)
+        binding.menuListButton.setOnClickListener {
+            iintent = Intent(this, SortActivity::class.java)
+            startActivity(iintent)
         }
-
-
+        binding.randomButton.setOnClickListener {
+            iintent = Intent(this, RandomMenu::class.java)
+            startActivity(iintent)
+        }
+        binding.DdabongButton.setOnClickListener {
+            iintent = Intent(this, Ddabongdor::class.java)
+            startActivity(iintent)
+        }
     }
 }
