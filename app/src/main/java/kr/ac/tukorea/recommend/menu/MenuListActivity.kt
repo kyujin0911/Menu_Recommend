@@ -1,5 +1,6 @@
 package kr.ac.tukorea.recommend.menu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -58,6 +59,10 @@ class MenuListActivity : AppCompatActivity() {
                 )
                 restaurantAdapter.notifyDataSetChanged()
             }
+        }
+        binding.homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

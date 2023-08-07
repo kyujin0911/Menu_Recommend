@@ -95,5 +95,9 @@ class RandomMenuActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        binding.homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

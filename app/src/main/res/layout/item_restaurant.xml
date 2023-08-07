@@ -70,17 +70,9 @@
             android:id="@+id/reviewStar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_star_24"
+            android:src="@drawable/gold_star"
             app:layout_constraintEnd_toStartOf="@id/rate"
             app:layout_constraintTop_toTopOf="@id/rate"
             app:layout_constraintBottom_toBottomOf="@id/rate"/>
-
-        <ImageButton
-            android:id="@+id/naverMapButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/naver_map_img"
-            app:layout_constraintBottom_toBottomOf="@id/restaurantInfoLayout"
-            app:layout_constraintEnd_toEndOf="@id/rate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

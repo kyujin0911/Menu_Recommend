@@ -34,6 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/homeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -160,7 +161,7 @@
         android:id="@+id/reviewStar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_star_24"
+        android:src="@drawable/gold_star"
         app:layout_constraintTop_toTopOf="@id/rate"
         app:layout_constraintBottom_toBottomOf="@id/rate"
         app:layout_constraintEnd_toStartOf="@+id/rate" />

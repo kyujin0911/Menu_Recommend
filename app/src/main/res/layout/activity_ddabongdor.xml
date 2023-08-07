@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/sort_title_layout_rectangle"
         android:padding="3dp"
-        app:layout_constraintBottom_toTopOf="@id/DdabongLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -34,12 +33,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/homeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:src="@drawable/baseline_home_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/DdabongLayout"
             app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="@id/Ddabong_title_text_view"
             app:layout_constraintTop_toTopOf="parent"
@@ -61,173 +60,220 @@
 
         <TextView
             android:id="@+id/firstDdabong"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
+            android:layout_width="230dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/sort_layout_rectangle"
             android:backgroundTint="@color/menu_background"
             android:gravity="center"
             android:text="가게 정보"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/firstTextView"
             app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
             app:layout_constraintStart_toStartOf="@id/DdabongLayout"
             app:layout_constraintTop_toTopOf="@id/DdabongLayout" />
 
         <TextView
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="16dp"
+            android:id="@+id/firstDdabongCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/firstDdabong"
+            app:layout_constraintTop_toTopOf="@id/firstDdabong" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/baseline_thumb_up_24"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/firstDdabongCount"
+            app:layout_constraintTop_toTopOf="@id/firstDdabongCount"
+            app:layout_constraintBottom_toBottomOf="@id/firstDdabongCount"/>
+
+        <TextView
+            android:id="@+id/firstTextView"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/sort_title_layout_rectangle"
             android:backgroundTint="#C9DCD9"
+            android:gravity="center"
             android:text="1등"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/firstDdabong" />
+            app:layout_constraintTop_toBottomOf="@+id/firstDdabong"
+            app:layout_constraintBottom_toTopOf="@id/secondDdabong"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="-110dp"
+            android:src="@drawable/gold_star"
+            app:layout_constraintBottom_toBottomOf="@id/firstTextView"
+            app:layout_constraintEnd_toStartOf="@id/firstTextView"
+            app:layout_constraintTop_toTopOf="@id/firstTextView" />
 
         <ImageView
             android:id="@+id/firstgrade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="76dp"
-            android:src="@drawable/ddatino"
-            app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
-            app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-            app:layout_constraintTop_toTopOf="@+id/backgroundImage" />
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/goldstar"
-            app:layout_constraintBottom_toBottomOf="@+id/firstgrade"
-            app:layout_constraintEnd_toEndOf="@+id/firstgrade"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="@+id/firstgrade"
-            app:layout_constraintTop_toTopOf="@+id/firstgrade"
-            app:layout_constraintVertical_bias="0.875" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:text="1등"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/firstgrade"
-            app:layout_constraintStart_toStartOf="@+id/firstgrade"
-            app:layout_constraintTop_toBottomOf="@+id/firstDdabong" />
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="-50dp"
+            android:layout_marginBottom="6dp"
+            android:elevation="15dp"
+            android:src="@drawable/thumb"
+            app:layout_constraintBottom_toBottomOf="@+id/firstTextView"
+            app:layout_constraintEnd_toStartOf="@id/firstDdabong" />
 
         <TextView
             android:id="@+id/secondDdabong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/firstgrade"
+            android:layout_width="230dp"
+            android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:background="@drawable/res_info"
+            android:background="@drawable/sort_layout_rectangle"
+            android:backgroundTint="@color/menu_background"
             android:gravity="center"
             android:text="가게 정보"
-            app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
-            app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-            app:layout_constraintTop_toBottomOf="@+id/firstgrade" />
-
-        <ImageView
-            android:id="@+id/secondgrade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/firstDdabong"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/cheertino"
-            app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
-            app:layout_constraintHorizontal_bias="0.552"
-            app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-            app:layout_constraintTop_toBottomOf="@+id/firstgrade" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/silverstar"
-            app:layout_constraintBottom_toBottomOf="@+id/secondgrade"
-            app:layout_constraintEnd_toEndOf="@+id/secondgrade"
-            app:layout_constraintHorizontal_bias="0.37"
-            app:layout_constraintStart_toStartOf="@+id/secondgrade"
-            app:layout_constraintTop_toTopOf="@+id/secondgrade"
-            app:layout_constraintVertical_bias="0.812" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
+            app:layout_constraintStart_toStartOf="@id/DdabongLayout"
+            app:layout_constraintTop_toBottomOf="@id/firstTextView"
+            app:layout_constraintBottom_toTopOf="@id/secondTextView"/>
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/secondDdabongCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/secondDdabong"
+            app:layout_constraintTop_toTopOf="@id/secondDdabong" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/baseline_thumb_up_24"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/secondDdabongCount"
+            app:layout_constraintTop_toTopOf="@id/secondDdabongCount"
+            app:layout_constraintBottom_toBottomOf="@id/secondDdabongCount"/>
+
+        <TextView
+            android:id="@+id/secondTextView"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sort_title_layout_rectangle"
+            android:backgroundTint="#C9DCD9"
+            android:gravity="center"
             android:text="2등"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/secondgrade"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="@+id/secondgrade"
-            app:layout_constraintTop_toBottomOf="@+id/secondDdabong" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondDdabong"
+            app:layout_constraintBottom_toTopOf="@id/thirdDdabong"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="-110dp"
+            android:src="@drawable/silver_star"
+            app:layout_constraintBottom_toBottomOf="@id/secondTextView"
+            app:layout_constraintEnd_toStartOf="@id/secondTextView"
+            app:layout_constraintTop_toTopOf="@id/secondTextView" />
+
+        <ImageView
+            android:id="@+id/secondGrade"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="-50dp"
+            android:src="@drawable/cheer"
+            app:layout_constraintBottom_toBottomOf="@+id/secondTextView"
+            app:layout_constraintStart_toEndOf="@id/secondDdabong" />
 
         <TextView
             android:id="@+id/thirdDdabong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/secondgrade"
+            android:layout_width="220dp"
+            android:layout_height="120dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/res_info"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sort_layout_rectangle"
+            android:backgroundTint="@color/menu_background"
             android:gravity="center"
             android:text="가게 정보"
-            app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
-            app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-            app:layout_constraintTop_toBottomOf="@+id/secondgrade" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
+            app:layout_constraintStart_toStartOf="@id/DdabongLayout"
+            app:layout_constraintTop_toBottomOf="@id/secondTextView"
+            app:layout_constraintBottom_toTopOf="@id/thirdTextView"/>
+
+        <TextView
+            android:id="@+id/thirdDdabongCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/thirdDdabong"
+            app:layout_constraintTop_toTopOf="@id/thirdDdabong" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/baseline_thumb_up_24"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/thirdDdabongCount"
+            app:layout_constraintTop_toTopOf="@id/thirdDdabongCount"
+            app:layout_constraintBottom_toBottomOf="@id/thirdDdabongCount"/>
+
+        <TextView
+            android:id="@+id/thirdTextView"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:background="@drawable/sort_title_layout_rectangle"
+            android:backgroundTint="#C9DCD9"
+            android:gravity="center"
+            android:text="3등"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdDdabong"
+            app:layout_constraintBottom_toBottomOf="@id/DdabongLayout"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="-110dp"
+            android:src="@drawable/bronze_star"
+            app:layout_constraintBottom_toBottomOf="@id/thirdTextView"
+            app:layout_constraintEnd_toStartOf="@id/thirdTextView"
+            app:layout_constraintTop_toTopOf="@id/thirdTextView" />
 
         <ImageView
             android:id="@+id/thirdgrade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/secondDdabong"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/tinoo"
-            app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
-            app:layout_constraintStart_toStartOf="@+id/backgroundImage"
-            app:layout_constraintTop_toBottomOf="@+id/secondgrade" />
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="-50dp"
+            android:scaleX="-1"
+            android:src="@drawable/candy"
+            app:layout_constraintBottom_toBottomOf="@+id/thirdTextView"
+            app:layout_constraintEnd_toStartOf="@id/thirdDdabong" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/dongstar"
-            app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
-            app:layout_constraintEnd_toStartOf="@+id/textView8"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/thirdgrade"
-            app:layout_constraintTop_toTopOf="@+id/thirdgrade"
-            app:layout_constraintVertical_bias="0.772" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:text="3등"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/thirdgrade"
-            app:layout_constraintStart_toStartOf="@+id/thirdgrade"
-            app:layout_constraintTop_toBottomOf="@+id/thirdDdabong" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

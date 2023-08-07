@@ -20,5 +20,9 @@ class MainActivity : AppCompatActivity() {
             iintent = Intent(this, RandomMenuActivity::class.java)
             startActivity(iintent)
         }
+        binding.DdabongButton.setOnClickListener {
+            iintent = Intent(this, DdabongdorActivity::class.java)
+            startActivity(iintent)
+        }
     }
 }

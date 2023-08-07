@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +16,6 @@
         android:backgroundTint="@color/main_title_text_view"
         android:background="@drawable/item_restaurant_rectangle"
         android:padding="10dp"
-        android:elevation="15dp"
         app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +27,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/tino"
+            android:elevation="15dp"
             app:layout_constraintBottom_toBottomOf="@id/mainTitle"
             app:layout_constraintEnd_toStartOf="@id/mainTitle"
             app:layout_constraintStart_toStartOf="@id/mainTitleTextView"
@@ -87,4 +88,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/randomButton"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="해당 어플의 식당 데이터는 네이버를 참고하였습니다."
+        android:gravity="center"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintTop_toBottomOf="@id/menuListButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/DdabongButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/item_restaurant_rectangle"
+        android:backgroundTint="@color/main_title_text_view"
+        android:drawableStart="@drawable/trophy_resize"
+        android:drawablePadding="10dp"
+        android:paddingHorizontal="20dp"
+        android:text="따봉도르"
+        android:textColor="@color/main_title_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
