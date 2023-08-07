@@ -1,0 +1,245 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/random_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_background"
+    android:padding="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Ddabong_title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sort_title_layout_rectangle"
+        android:padding="3dp"
+        app:layout_constraintBottom_toTopOf="@id/checkLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/menu_list_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sort_title_layout_rectangle"
+            android:gravity="center"
+            android:text="선호하는 음식 체크"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/gohome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:src="@drawable/baseline_home_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/menu_list_textView"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="@id/Ddabong_title_text_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/checkLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sort_layout_rectangle"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Ddabong_title_text_view">
+
+        <CheckBox
+            android:id="@+id/check_korean"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:text="한식"
+            android:buttonTint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/check_yang"
+            app:layout_constraintEnd_toStartOf="@id/check_chinese"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/checkLayout"
+            app:layout_constraintTop_toTopOf="@id/checkLayout"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <CheckBox
+            android:id="@+id/check_yang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:text="양식"
+            android:buttonTint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/check_korean"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/check_korean"
+            app:layout_constraintTop_toBottomOf="@id/check_korean" />
+
+        <CheckBox
+            android:id="@+id/check_japanese"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:text="일식"
+            android:buttonTint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/checkLayout"
+            app:layout_constraintEnd_toStartOf="@id/check_desert"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/check_korean"
+            app:layout_constraintTop_toBottomOf="@id/check_yang" />
+
+        <CheckBox
+            android:id="@+id/check_chinese"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:text="중식"
+            android:buttonTint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/check_korean"
+            app:layout_constraintEnd_toEndOf="@id/checkLayout"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toEndOf="@id/check_korean"
+            app:layout_constraintTop_toTopOf="@id/check_korean"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <CheckBox
+            android:id="@+id/check_fastFood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:text="패스트푸드"
+            android:buttonTint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/check_chinese"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="@id/check_chinese"
+            app:layout_constraintTop_toBottomOf="@id/check_chinese" />
+
+        <CheckBox
+            android:id="@+id/check_desert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:text="디저트"
+            android:buttonTint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/check_extra"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/check_japanese"
+            app:layout_constraintTop_toBottomOf="@id/check_fastFood" />
+
+        <CheckBox
+            android:id="@+id/check_extra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:text="기타"
+            android:buttonTint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/check_desert"
+            app:layout_constraintEnd_toEndOf="@id/checkLayout"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/check_desert"
+            app:layout_constraintTop_toTopOf="@id/check_desert" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/reviewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리뷰 수: "
+        android:textColor="@color/black"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/rate"
+        app:layout_constraintEnd_toStartOf="@id/reviewStar"
+        />
+
+    <ImageView
+        android:id="@+id/reviewStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_star_24"
+        app:layout_constraintTop_toTopOf="@id/rate"
+        app:layout_constraintBottom_toBottomOf="@id/rate"
+        app:layout_constraintEnd_toStartOf="@+id/rate" />
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="별점"
+        android:textColor="@color/black"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/checkLayout"
+        app:layout_constraintBottom_toTopOf="@id/randomButton"
+        app:layout_constraintEnd_toEndOf="@id/checkLayout"
+        />
+
+    <Button
+        android:id="@+id/randomButton"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/sort_layout_rectangle"
+        android:padding="10dp"
+        android:text="여기를 누르세요"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkLayout"></Button>
+
+    <Button
+        android:id="@+id/naverMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sort_layout_rectangle"
+        android:backgroundTint="@color/menu_inner_background"
+        android:drawableStart="@drawable/naver_map_img"
+        android:drawablePadding="10dp"
+        android:paddingHorizontal="10dp"
+        android:text="네이버지도로 열기"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/randomButton" />
+
+    <Button
+        android:id="@+id/Ddabong_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="272dp"
+        android:background="@drawable/sort_layout_rectangle"
+        android:backgroundTint="@color/menu_inner_background"
+        android:drawableStart="@drawable/ddabong_img"
+        android:drawablePadding="10dp"
+        android:paddingHorizontal="10dp"
+        android:text="따봉"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/randomButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
