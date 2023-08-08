@@ -4,10 +4,11 @@
     android:id="@+id/restaurantInfoLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
+    android:padding="10dp"
     android:layout_marginHorizontal="10dp"
     android:layout_marginTop="10dp"
-    android:background="@drawable/round_rectangle3"
+    android:background="@drawable/item_restaurant_rectangle"
+    android:backgroundTint="@color/sky_blue"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <TextView
@@ -19,8 +20,8 @@
             style="@style/info_text"
             app:layout_constraintStart_toStartOf="@id/restaurantInfoLayout"
             app:layout_constraintTop_toTopOf="@id/restaurantInfoLayout"
-            app:layout_constraintBottom_toBottomOf="@id/restaurantInfoLayout"
-            app:layout_constraintVertical_bias="0.1"/>
+            app:layout_constraintBottom_toTopOf="@id/category"
+            app:layout_constraintEnd_toStartOf="@id/reviewCount"/>
 
         <TextView
             android:id="@+id/category"
@@ -49,7 +50,7 @@
         <TextView
             android:id="@+id/reviewCount"
             style="@style/info_text"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="리뷰"
             app:layout_constraintBaseline_toBaselineOf="@id/rate"
@@ -70,7 +71,7 @@
             android:id="@+id/reviewStar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_star_24"
+            android:src="@drawable/gold_star"
             app:layout_constraintEnd_toStartOf="@id/rate"
             app:layout_constraintTop_toTopOf="@id/rate"
             app:layout_constraintBottom_toBottomOf="@id/rate"/>

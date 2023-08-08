@@ -58,7 +58,7 @@ class SortActivity : AppCompatActivity() {
                 restaurantAdapter.notifyDataSetChanged()
             }
         }
-        binding.gohome.setOnClickListener{
+        binding.homeButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
