@@ -1,27 +1,22 @@
 package com.example.menurecommend
 
 import android.content.Intent
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.menurecommend.databinding.ActivitySortBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kr.ac.tukorea.recommend.menu.RestaurantItem
 
 
 class SortActivity : AppCompatActivity() {
     lateinit var binding: ActivitySortBinding
     lateinit var restaurantAdapter: RestaurantAdapter
     val database = FirebaseDatabase.getInstance()
-    var restaurants = mutableListOf<RestaurantItem>()
+    var restaurants = mutableListOf<Res>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySortBinding.inflate(layoutInflater)
@@ -32,7 +27,7 @@ class SortActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     restaurants.clear()
                     snapshot.children.forEach {
-                        val value = it.getValue(RestaurantItem::class.java)
+                        val value = it.getValue(Res::class.java)
                         restaurants.add(value!!)
                     }
                     restaurantAdapter.notifyDataSetChanged()
@@ -59,7 +54,7 @@ class SortActivity : AppCompatActivity() {
                 restaurantAdapter.notifyDataSetChanged()
             }
             else{
-                restaurants.sortWith(compareBy<RestaurantItem>({it.rate}, {it.review_count}).reversed())
+                restaurants.sortWith(compareBy<Res>({it.rate}, {it.review_count}).reversed())
                 restaurantAdapter.notifyDataSetChanged()
             }
         }

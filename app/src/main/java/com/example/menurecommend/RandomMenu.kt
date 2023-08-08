@@ -37,6 +37,10 @@ class RandomMenu : AppCompatActivity() {
         binding = ActivityRandomMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.randomButton.isEnabled = false
+        binding.naverMapButton.isEnabled = false
+        binding.DdabongBtn.isEnabled = false
+
         database.getReference("ResData")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -46,6 +50,7 @@ class RandomMenu : AppCompatActivity() {
                         value?.index = index++
                         restaurants.add(value!!)
                     }
+                    binding.randomButton.isEnabled = true
                     Log.d("loadData", "$restaurants")
                 }
 
@@ -83,23 +88,37 @@ class RandomMenu : AppCompatActivity() {
         binding.checkExtra.setOnCheckedChangeListener(listener)
 
         binding.randomButton.setOnClickListener {
-            if (checked_category.isNotEmpty()) {
-                var findIndex = arrayListOf<Int>()
-                restaurants.indices.filter { restaurants[it].category in checked_category }
-                    .forEach { findIndex.add(it) }
 
-                res = restaurants[findIndex.random()]
-                binding.randomButton.text = "${res?.name}\n${res?.category}\n${res?.address}\n"
-                binding.reviewCount.text = "리뷰 ${res?.review_count}"
-                binding.rate.text = "${res?.rate}"
-                binding.naverMapButton.isEnabled = true
+            var findIndex = arrayListOf<Int>()
+            restaurants.indices.filter { restaurants[it].category in checked_category }
+                .forEach { findIndex.add(it) }
+
+            res = if (checked_category.isNotEmpty()) {
+                restaurants[findIndex.random()]
             } else {
-                Toast.makeText(this, "체크박스를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                restaurants.random()
+            }
+
+            binding.randomButton.text = "식당: ${res?.name}\n\n${res?.category}\n\n주소: ${res?.address}\n"
+            binding.reviewCount.text = "리뷰 ${res?.review_count}"
+            binding.rate.text = "${res?.rate}"
+            binding.naverMapButton.isEnabled = true
+            binding.DdabongBtn.isEnabled = true
+
+        }
+        binding.naverMapButton.setOnClickListener {
+            res?.let { currentRes ->
+                val intent = Intent(this, MapView::class.java)
+                intent.putExtra("name", currentRes.name)
+                intent.putExtra("lati", currentRes.Latitude)
+                intent.putExtra("long", currentRes.Longitude)
+                startActivity(intent)
             }
         }
+
         binding.DdabongBtn.setOnClickListener {
             res?.let { currentRes ->
-                val ddabong_cnt = currentRes.ddabong + 1
+                val ddabong_cnt = currentRes.ddabong!! + 1
                 val temp = database.getReference("ResData/${currentRes.index}")
                 temp.updateChildren(mapOf("ddabong" to ddabong_cnt))
                     .addOnSuccessListener {
@@ -109,18 +128,10 @@ class RandomMenu : AppCompatActivity() {
                     .addOnFailureListener {
                     }
             } ?: run {
-                Toast.makeText(this, "메뉴 추첨 버튼부터 눌러주세요!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "메뉴 추천 버튼부터 눌러주세요!", Toast.LENGTH_SHORT).show()
             }
         }
-        binding.naverMapButton.setOnClickListener {
-            res?.let { currentRes ->
-                val intent = Intent(this, com.example.menurecommend.MapView::class.java)
-                intent.putExtra("name", currentRes.name)
-                intent.putExtra("lati", currentRes.Latitude)
-                intent.putExtra("long", currentRes.Longitude)
-                startActivity(intent)
-            }
-        }
+
         binding.gohome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

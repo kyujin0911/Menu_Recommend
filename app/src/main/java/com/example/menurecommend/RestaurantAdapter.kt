@@ -2,16 +2,12 @@ package com.example.menurecommend
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.getSystemService
 import androidx.recyclerview.widget.RecyclerView
 import com.example.menurecommend.databinding.ItemRestaurantBinding
-import kotlinx.coroutines.NonDisposableHandle.parent
-import kr.ac.tukorea.recommend.menu.RestaurantItem
 
 
-class RestaurantAdapter( val list: MutableList<RestaurantItem>) : RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>(){
+class RestaurantAdapter( val list: MutableList<Res>) : RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>(){
     class RestaurantViewHolder(val binding: ItemRestaurantBinding) : RecyclerView.ViewHolder(binding.root) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
