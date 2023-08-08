@@ -14,8 +14,7 @@ class RestaurantAdapter(private val list: MutableList<RestaurantInfo>) :
 
     class RestaurantViewHolder(val binding: ItemRestaurantBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
         val inflater =

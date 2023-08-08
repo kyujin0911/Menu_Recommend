@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A9CD34"
+    android:background="@color/menu_background_blue3"
     android:padding="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +26,6 @@
             android:text="따봉도르"
             android:textColor="@color/black"
             android:textSize="25dp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +41,8 @@
             app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="@id/Ddabong_title_text_view"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintVertical_bias="0.5"
+            app:tint="@color/black" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,15 +60,9 @@
 
         <TextView
             android:id="@+id/firstDdabong"
-            android:layout_width="230dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="10dp"
+            style="@style/Ddabong_text_view"
             android:background="@drawable/sort_layout_rectangle"
-            android:backgroundTint="@color/menu_background"
-            android:gravity="center"
-            android:text="가게 정보"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+            android:backgroundTint="@color/sky_blue"
             app:layout_constraintBottom_toTopOf="@id/firstTextView"
             app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
             app:layout_constraintStart_toStartOf="@id/DdabongLayout"
@@ -99,10 +93,9 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/sort_title_layout_rectangle"
-            android:backgroundTint="#C9DCD9"
+            android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="1등"
-            android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,16 +125,9 @@
 
         <TextView
             android:id="@+id/secondDdabong"
-            android:layout_width="230dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            style="@style/Ddabong_text_view"
             android:background="@drawable/sort_layout_rectangle"
-            android:backgroundTint="@color/menu_background"
-            android:gravity="center"
-            android:text="가게 정보"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/sky_blue"
             app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
             app:layout_constraintStart_toStartOf="@id/DdabongLayout"
             app:layout_constraintTop_toBottomOf="@id/firstTextView"
@@ -172,10 +158,9 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/sort_title_layout_rectangle"
-            android:backgroundTint="#C9DCD9"
+            android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="2등"
-            android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -203,16 +188,9 @@
 
         <TextView
             android:id="@+id/thirdDdabong"
-            android:layout_width="220dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            style="@style/Ddabong_text_view"
             android:background="@drawable/sort_layout_rectangle"
-            android:backgroundTint="@color/menu_background"
-            android:gravity="center"
-            android:text="가게 정보"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/sky_blue"
             app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
             app:layout_constraintStart_toStartOf="@id/DdabongLayout"
             app:layout_constraintTop_toBottomOf="@id/secondTextView"
@@ -242,10 +220,9 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:background="@drawable/sort_title_layout_rectangle"
-            android:backgroundTint="#C9DCD9"
+            android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="3등"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"

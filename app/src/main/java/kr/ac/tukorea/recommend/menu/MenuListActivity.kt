@@ -29,9 +29,8 @@ class MenuListActivity : AppCompatActivity() {
                         val value = it.getValue(RestaurantInfo::class.java)
                         restaurants.add(value!!)
                     }
-                        restaurantAdapter.notifyDataSetChanged()
+                    restaurantAdapter.notifyDataSetChanged()
                 }
-
 
                 override fun onCancelled(error: DatabaseError) {
                 }

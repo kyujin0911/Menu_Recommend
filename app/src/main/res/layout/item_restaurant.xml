@@ -4,10 +4,11 @@
     android:id="@+id/restaurantInfoLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
+    android:padding="10dp"
     android:layout_marginHorizontal="10dp"
     android:layout_marginTop="10dp"
     android:background="@drawable/item_restaurant_rectangle"
+    android:backgroundTint="@color/sky_blue"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <TextView

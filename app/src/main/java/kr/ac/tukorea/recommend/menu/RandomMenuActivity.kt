@@ -1,17 +1,26 @@
 package kr.ac.tukorea.recommend.menu
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.widget.CompoundButton
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.naver.maps.map.MapView
 import kr.ac.tukorea.recommend.menu.databinding.ActivityRandomMenuBinding
+import kr.ac.tukorea.recommend.menu.databinding.ToastTinoBinding
 import kr.ac.tukorea.recommend.menu.util.RestaurantInfo
 
 class RandomMenuActivity : AppCompatActivity() {
@@ -26,6 +35,11 @@ class RandomMenuActivity : AppCompatActivity() {
         binding = ActivityRandomMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.randomButton.isEnabled = false
+        binding.naverMapButton.isEnabled = false
+        binding.DdabongButton.isEnabled = false
+        binding.clipboardButton.isEnabled = false
+
         database.getReference("ResData")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -35,6 +49,7 @@ class RandomMenuActivity : AppCompatActivity() {
                         value?.index = index++
                         restaurants.add(value!!)
                     }
+                    binding.randomButton.isEnabled = true
                     Log.d("loadData", "$restaurants")
                 }
 
@@ -72,19 +87,26 @@ class RandomMenuActivity : AppCompatActivity() {
         binding.checkExtra.setOnCheckedChangeListener(listener)
 
         binding.randomButton.setOnClickListener {
-            if (checked_category.isNotEmpty()) {
-                var findIndex = arrayListOf<Int>()
-                restaurants.indices.filter { restaurants[it].category in checked_category }
-                    .forEach { findIndex.add(it) }
 
-                res = restaurants[findIndex.random()]
-                binding.randomButton.text = "${res?.name}\n${res?.category}\n${res?.address}\n"
-                binding.reviewCount.text = "리뷰 ${res?.review_count}"
-                binding.rate.text = "${res?.rate}"
-                binding.naverMapButton.isEnabled = true
+            var findIndex = arrayListOf<Int>()
+            restaurants.indices.filter { restaurants[it].category in checked_category }
+                .forEach { findIndex.add(it) }
+
+            res = if (checked_category.isNotEmpty()) {
+                restaurants[findIndex.random()]
             } else {
-                Toast.makeText(this, "체크박스를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                restaurants.random()
             }
+
+            binding.restaurantName.text = "식당: ${res?.name}"
+            binding.restaurantCategory.text = "분류: ${res?.category}"
+            binding.restaurantAddress.text = "주소: ${res?.address}"
+            binding.reviewCount.text = "리뷰 ${res?.review_count}"
+            binding.rate.text = "${res?.rate}"
+            binding.naverMapButton.isEnabled = true
+            binding.DdabongButton.isEnabled = true
+            binding.clipboardButton.isEnabled = true
+
         }
         binding.naverMapButton.setOnClickListener {
             res?.let { currentRes ->
@@ -95,9 +117,50 @@ class RandomMenuActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
+        binding.DdabongButton.setOnClickListener {
+            res?.let { currentRes ->
+                val ddabong_cnt = currentRes.ddabong!! + 1
+                val temp = database.getReference("ResData/${currentRes.index}")
+                temp.updateChildren(mapOf("ddabong" to ddabong_cnt))
+                    .addOnSuccessListener {
+                        val context = this
+                        tinoToast.customToastView(context, "따봉~")?.show()
+                        binding.DdabongButton.isEnabled = false
+                    }
+                    .addOnFailureListener {
+                    }
+            } ?: run {
+                Toast.makeText(this, "메뉴 추천 버튼부터 눌러주세요!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         binding.homeButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        binding.clipboardButton.setOnClickListener {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("address", "${res?.address}")
+            clipboard.setPrimaryClip(clip)
+            //Toast.makeText(this, "식당 주소가 복사되었습니다!", Toast.LENGTH_SHORT).show()
+            val context = this
+            tinoToast.customToastView(context, "식당 주소가 복사되었습니다!")?.show()
+        }
+    }
+    object tinoToast {
+        fun customToastView(context: Context, message: String): Toast? {
+            val inflater = LayoutInflater.from(context)
+            val binding: ToastTinoBinding = ToastTinoBinding.inflate(inflater)
+            binding.toastText.text = message
+
+            return Toast(context).apply {
+                setGravity(Gravity.BOTTOM or Gravity.CENTER, 0, 120.toPx())
+                duration = Toast.LENGTH_SHORT
+                view = binding.root
+            }
+        }
+        private fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
     }
 }
