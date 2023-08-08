@@ -13,11 +13,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.menuListButton.setOnClickListener {
-            iintent = Intent(this, MenuListActivity::class.java)
+            iintent = Intent(this, RestaurantListActivity::class.java)
             startActivity(iintent)
         }
         binding.randomButton.setOnClickListener {
-            iintent = Intent(this, RandomMenuActivity::class.java)
+            iintent = Intent(this, RestaurantRandomActivity::class.java)
             startActivity(iintent)
         }
         binding.DdabongButton.setOnClickListener {

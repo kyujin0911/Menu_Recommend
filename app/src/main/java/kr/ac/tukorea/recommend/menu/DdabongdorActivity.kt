@@ -15,8 +15,7 @@ import okhttp3.internal.wait
 class DdabongdorActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDdabongdorBinding
     private val database = FirebaseDatabase.getInstance()
-    var restaurants = mutableListOf<RestaurantInfo>()
-    val TAG = "Ddabong"
+    private var restaurants = mutableListOf<RestaurantInfo>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDdabongdorBinding.inflate(layoutInflater)

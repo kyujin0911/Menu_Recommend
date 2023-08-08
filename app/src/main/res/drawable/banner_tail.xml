@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:width="40dp"
+        android:height="40dp"
+        android:gravity="bottom|left">
+        <vector
+            android:width="8dp"
+            android:height="8dp"
+            android:viewportWidth="8.0"
+            android:viewportHeight="8.0">
+            <path
+                android:pathData="M 0,0 4,0 8,8z"
+                android:fillColor="@color/sky_blue"/>
+        </vector>
+    </item>
+
+</layer-list>

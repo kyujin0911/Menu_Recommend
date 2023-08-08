@@ -9,7 +9,7 @@
         android:id="@+id/toast_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/tino_btn_resize"
+        android:drawableStart="@drawable/tino_head_resize"
         android:drawablePadding="5dp"
         android:background="@drawable/item_restaurant_rectangle"
         android:backgroundTint="@color/menu_background_blue2"

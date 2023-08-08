@@ -21,10 +21,10 @@
             android:name=".MapViewActivity"
             android:exported="false" />
         <activity
-            android:name=".RandomMenuActivity"
+            android:name=".RestaurantRandomActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuListActivity"
+            android:name=".RestaurantListActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

@@ -25,7 +25,7 @@
         android:id="@+id/tino_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/tino_btn"
+        android:src="@drawable/tino_head"
         android:padding="60dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

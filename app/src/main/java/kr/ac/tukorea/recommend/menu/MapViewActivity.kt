@@ -29,8 +29,6 @@ class MapViewActivity : AppCompatActivity() {
                 fm.beginTransaction().add(R.id.navermap, it).commit()
             }
 
-
-
         mapFragment.getMapAsync { naverMap ->
             val averageLatitude = (lati + 37.340276827203006) / 2
             val averageLongitude = (long + 126.73154260098929) / 2
@@ -50,6 +48,5 @@ class MapViewActivity : AppCompatActivity() {
             markerSchool.map = naverMap
             naverMap.minZoom = 5.0
         }
-
     }
 }
