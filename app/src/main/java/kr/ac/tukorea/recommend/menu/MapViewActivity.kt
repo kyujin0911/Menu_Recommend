@@ -14,7 +14,6 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.util.MarkerIcons
 
 class MapViewActivity : AppCompatActivity() {
-    val TAG = "latilong"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map_view)
@@ -24,7 +23,6 @@ class MapViewActivity : AppCompatActivity() {
         val long = intent.getDoubleExtra("long", 0.0)
         val marker = Marker()
         val markerSchool = Marker()
-        val cameraUpdate = CameraUpdate.scrollTo(LatLng(lati, long))
         val fm = supportFragmentManager
         val mapFragment = fm.findFragmentById(R.id.navermap) as MapFragment?
             ?: MapFragment.newInstance().also {
@@ -34,14 +32,23 @@ class MapViewActivity : AppCompatActivity() {
 
 
         mapFragment.getMapAsync { naverMap ->
-            Log.d(TAG, "${lati},${long}")
+            val averageLatitude = (lati + 37.340276827203006) / 2
+            val averageLongitude = (long + 126.73154260098929) / 2
+            val cameraUpdate = CameraUpdate.scrollTo(LatLng(averageLatitude, averageLongitude))
+            naverMap.moveCamera(cameraUpdate)
             marker.position = LatLng(lati, long)
+            markerSchool.position = LatLng(37.340276827203006, 126.73154260098929)
             marker.icon = MarkerIcons.BLACK
+            markerSchool.icon = MarkerIcons.LIGHTBLUE
+            markerSchool.iconTintColor = Color.BLUE
+            markerSchool.captionText = "한국공학대학교"
+            markerSchool.captionTextSize = 15f
             marker.iconTintColor = Color.RED
             marker.captionText = name
             marker.captionTextSize = 15f
             marker.map = naverMap
-            naverMap.moveCamera(cameraUpdate)
+            markerSchool.map = naverMap
+            naverMap.minZoom = 5.0
         }
 
     }
