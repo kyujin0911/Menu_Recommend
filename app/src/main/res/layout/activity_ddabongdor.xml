@@ -31,18 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/homeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:src="@drawable/baseline_home_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toStartOf="@id/Ddabong_title_text_view"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            app:tint="@color/black" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -89,13 +78,14 @@
 
         <TextView
             android:id="@+id/firstTextView"
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/sort_title_layout_rectangle"
             android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="1등"
+            android:textSize="20dp"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +106,7 @@
             android:id="@+id/firstgrade"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginEnd="-50dp"
+            android:layout_marginEnd="-70dp"
             android:layout_marginBottom="6dp"
             android:elevation="15dp"
             android:src="@drawable/thumb"
@@ -154,13 +144,14 @@
 
         <TextView
             android:id="@+id/secondTextView"
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/sort_title_layout_rectangle"
             android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="2등"
+            android:textSize="20dp"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +172,7 @@
             android:id="@+id/secondGrade"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginStart="-50dp"
+            android:layout_marginStart="-70dp"
             android:src="@drawable/cheer"
             app:layout_constraintBottom_toBottomOf="@+id/secondTextView"
             app:layout_constraintStart_toEndOf="@id/secondDdabong" />
@@ -217,12 +208,13 @@
 
         <TextView
             android:id="@+id/thirdTextView"
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="40dp"
             android:background="@drawable/sort_title_layout_rectangle"
             android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="3등"
+            android:textSize="20dp"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
@@ -245,7 +237,7 @@
             android:id="@+id/thirdgrade"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginEnd="-50dp"
+            android:layout_marginEnd="-70dp"
             android:scaleX="-1"
             android:src="@drawable/candy"
             app:layout_constraintBottom_toBottomOf="@+id/thirdTextView"
