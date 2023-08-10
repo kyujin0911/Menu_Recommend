@@ -5,6 +5,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -42,14 +43,16 @@ class RestaurantRandomActivity : AppCompatActivity() {
         database.getReference("ResData")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    restaurants.clear()
+                    index = 0
                     snapshot.children.forEach {
                         var value = it.getValue(RestaurantInfo::class.java)
                         value?.index = index++
                         restaurants.add(value!!)
                     }
                     binding.randomButton.isEnabled = true
-                    Log.d("loadData", "$restaurants")
                 }
+
                 override fun onCancelled(error: DatabaseError) {
                     Log.d("SortActivity", "${error.toException()}")
                 }
@@ -111,33 +114,22 @@ class RestaurantRandomActivity : AppCompatActivity() {
         }
 
         binding.DdabongButton.setOnClickListener {
-            restaurant?.let { currentRes ->
-                val ddabongCnt = currentRes.ddabong!! + 1
-                val temp = database.getReference("ResData/${currentRes.index}")
-                temp.updateChildren(mapOf("ddabong" to ddabongCnt))
-                    .addOnSuccessListener {
-                        val context = this
-                        TinoToast.customToastView(context, "따봉~")?.show()
-                        binding.DdabongButton.isEnabled = false
-                    }
-                    .addOnFailureListener {
-                    }
-            } ?: run {
-                Toast.makeText(this, "메뉴 추천 버튼부터 눌러주세요!", Toast.LENGTH_SHORT).show()
-            }
+            val ddabongCnt = restaurant!!.ddabong!! + 1
+            val temp = database.getReference("ResData/${restaurant!!.index}")
+            temp.updateChildren(mapOf("ddabong" to ddabongCnt))
+                .addOnSuccessListener {
+                    val context = this
+                    Log.d("restaruant", "${restaurant!!.index}")
+                    TinoToast.customToastView(context, "따봉~")?.show()
+                    binding.DdabongButton.isEnabled = false
+                }
+                .addOnFailureListener {
+                }
         }
-
-        binding.homeButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.clipboardButton.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("address", "${restaurant?.address}")
             clipboard.setPrimaryClip(clip)
-            val context = this
-            TinoToast.customToastView(context, "식당 주소가 복사되었습니다!")?.show()
         }
     }
 }

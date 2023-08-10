@@ -17,6 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tino_head_resize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Ddabong_textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/Ddabong_textView"
             android:layout_width="wrap_content"
@@ -31,18 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/homeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:src="@drawable/home"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toStartOf="@id/Ddabong_title_text_view"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            app:tint="@color/black" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -81,26 +79,27 @@
         <ImageView
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:src="@drawable/thumb_up"
             android:layout_marginEnd="5dp"
+            android:src="@drawable/thumb_up"
+            app:layout_constraintBottom_toBottomOf="@id/firstDdabongCount"
             app:layout_constraintEnd_toStartOf="@id/firstDdabongCount"
-            app:layout_constraintTop_toTopOf="@id/firstDdabongCount"
-            app:layout_constraintBottom_toBottomOf="@id/firstDdabongCount"/>
+            app:layout_constraintTop_toTopOf="@id/firstDdabongCount" />
 
         <TextView
             android:id="@+id/firstTextView"
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/title_rectangle"
+            android:background="@drawable/layout_round_rectangle"
             android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="1등"
             android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/secondDdabong"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/firstDdabong"
-            app:layout_constraintBottom_toTopOf="@id/secondDdabong"/>
+            app:layout_constraintTop_toBottomOf="@+id/firstDdabong" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -116,7 +115,7 @@
             android:id="@+id/firstgrade"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginEnd="-50dp"
+            android:layout_marginEnd="-70dp"
             android:layout_marginBottom="6dp"
             android:elevation="15dp"
             android:src="@drawable/thumb_tino"
@@ -128,10 +127,10 @@
             style="@style/Ddabong_text_view"
             android:background="@drawable/layout_round_rectangle"
             android:backgroundTint="@color/sky_blue"
+            app:layout_constraintBottom_toTopOf="@id/secondTextView"
             app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
             app:layout_constraintStart_toStartOf="@id/DdabongLayout"
-            app:layout_constraintTop_toBottomOf="@id/firstTextView"
-            app:layout_constraintBottom_toTopOf="@id/secondTextView"/>
+            app:layout_constraintTop_toBottomOf="@id/firstTextView" />
 
         <TextView
             android:id="@+id/secondDdabongCount"
@@ -146,15 +145,15 @@
         <ImageView
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:src="@drawable/thumb_up"
             android:layout_marginEnd="5dp"
+            android:src="@drawable/thumb_up"
+            app:layout_constraintBottom_toBottomOf="@id/secondDdabongCount"
             app:layout_constraintEnd_toStartOf="@id/secondDdabongCount"
-            app:layout_constraintTop_toTopOf="@id/secondDdabongCount"
-            app:layout_constraintBottom_toBottomOf="@id/secondDdabongCount"/>
+            app:layout_constraintTop_toTopOf="@id/secondDdabongCount" />
 
         <TextView
             android:id="@+id/secondTextView"
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/title_rectangle"
@@ -162,10 +161,11 @@
             android:gravity="center"
             android:text="2등"
             android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/thirdDdabong"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/secondDdabong"
-            app:layout_constraintBottom_toTopOf="@id/thirdDdabong"/>
+            app:layout_constraintTop_toBottomOf="@+id/secondDdabong" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -181,7 +181,7 @@
             android:id="@+id/secondGrade"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginStart="-50dp"
+            android:layout_marginStart="-70dp"
             android:src="@drawable/cheer_tino"
             app:layout_constraintBottom_toBottomOf="@+id/secondTextView"
             app:layout_constraintStart_toEndOf="@id/secondDdabong" />
@@ -191,10 +191,10 @@
             style="@style/Ddabong_text_view"
             android:background="@drawable/layout_round_rectangle"
             android:backgroundTint="@color/sky_blue"
+            app:layout_constraintBottom_toTopOf="@id/thirdTextView"
             app:layout_constraintEnd_toEndOf="@id/DdabongLayout"
             app:layout_constraintStart_toStartOf="@id/DdabongLayout"
-            app:layout_constraintTop_toBottomOf="@id/secondTextView"
-            app:layout_constraintBottom_toTopOf="@id/thirdTextView"/>
+            app:layout_constraintTop_toBottomOf="@id/secondTextView" />
 
         <TextView
             android:id="@+id/thirdDdabongCount"
@@ -209,27 +209,28 @@
         <ImageView
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:src="@drawable/thumb_up"
             android:layout_marginEnd="5dp"
+            android:src="@drawable/thumb_up"
+            app:layout_constraintBottom_toBottomOf="@id/thirdDdabongCount"
             app:layout_constraintEnd_toStartOf="@id/thirdDdabongCount"
-            app:layout_constraintTop_toTopOf="@id/thirdDdabongCount"
-            app:layout_constraintBottom_toBottomOf="@id/thirdDdabongCount"/>
+            app:layout_constraintTop_toTopOf="@id/thirdDdabongCount" />
 
         <TextView
             android:id="@+id/thirdTextView"
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/title_rectangle"
             android:backgroundTint="@color/menu_background_blue"
             android:gravity="center"
             android:text="3등"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/DdabongLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/thirdDdabong"
-            app:layout_constraintBottom_toBottomOf="@id/DdabongLayout"/>
+            app:layout_constraintTop_toBottomOf="@+id/thirdDdabong" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -245,7 +246,7 @@
             android:id="@+id/thirdgrade"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginEnd="-50dp"
+            android:layout_marginEnd="-70dp"
             android:scaleX="-1"
             android:src="@drawable/candy_tino"
             app:layout_constraintBottom_toBottomOf="@+id/thirdTextView"

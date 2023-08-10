@@ -45,9 +45,5 @@ class DdabongdorActivity : AppCompatActivity() {
                 override fun onCancelled(error: DatabaseError) {
                 }
             })
-        binding.homeButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

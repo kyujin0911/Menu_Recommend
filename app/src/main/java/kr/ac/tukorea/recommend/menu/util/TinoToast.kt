@@ -14,7 +14,8 @@ object TinoToast {
         binding.toastText.text = message
 
         return Toast(context).apply {
-            setGravity(Gravity.BOTTOM or Gravity.CENTER, 0, 120.toPx())
+            setGravity(Gravity.BOTTOM, 0, 72.toPx())
+            //or Gravity.CENTER, 0, 120.toPx()
             duration = Toast.LENGTH_SHORT
             view = binding.root
         }

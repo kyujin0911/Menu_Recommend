@@ -9,6 +9,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kr.ac.tukorea.recommend.menu.databinding.ActivityRestaurantListBinding
+import kr.ac.tukorea.recommend.menu.databinding.ItemRestaurantBinding
 import kr.ac.tukorea.recommend.menu.util.RestaurantAdapter
 import kr.ac.tukorea.recommend.menu.util.RestaurantInfo
 
@@ -59,10 +60,6 @@ class RestaurantListActivity : AppCompatActivity() {
                 )
                 restaurantAdapter.notifyDataSetChanged()
             }
-        }
-        binding.homeButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
     }
 }

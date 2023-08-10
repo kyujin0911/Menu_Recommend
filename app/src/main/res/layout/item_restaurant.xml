@@ -13,15 +13,15 @@
 
         <TextView
             android:id="@+id/restaurantName"
+            style="@style/info_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="이름"
             android:textStyle="bold"
-            style="@style/info_text"
-            app:layout_constraintStart_toStartOf="@id/restaurantInfoLayout"
-            app:layout_constraintTop_toTopOf="@id/restaurantInfoLayout"
             app:layout_constraintBottom_toTopOf="@id/category"
-            app:layout_constraintEnd_toStartOf="@id/reviewCount"/>
+            app:layout_constraintEnd_toStartOf="@id/reviewCount"
+            app:layout_constraintStart_toStartOf="@id/restaurantInfoLayout"
+            app:layout_constraintTop_toTopOf="@id/restaurantInfoLayout" />
 
         <TextView
             android:id="@+id/category"
@@ -37,11 +37,13 @@
         <TextView
             android:id="@+id/address"
             style="@style/info_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="주소"
-            android:breakStrategy="simple"
-            app:layout_constraintEnd_toEndOf="@id/restaurantName"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/thumb"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@id/restaurantName"
             app:layout_constraintTop_toBottomOf="@id/category"
@@ -50,7 +52,7 @@
         <TextView
             android:id="@+id/reviewCount"
             style="@style/info_text"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="리뷰"
             app:layout_constraintBaseline_toBaselineOf="@id/rate"
@@ -75,5 +77,25 @@
             app:layout_constraintEnd_toStartOf="@id/rate"
             app:layout_constraintTop_toTopOf="@id/rate"
             app:layout_constraintBottom_toBottomOf="@id/rate"/>
+
+        <TextView
+            android:id="@+id/thumbCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/rate"
+            app:layout_constraintBaseline_toBaselineOf="@id/address"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/thumb"
+            android:layout_width="24dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="7dp"
+            android:src="@drawable/thumb_up"
+            app:layout_constraintStart_toStartOf="@id/reviewStar"
+            app:layout_constraintEnd_toEndOf="@id/reviewStar"
+            app:layout_constraintBottom_toBottomOf="@id/address"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
