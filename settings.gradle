@@ -10,7 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven{
+            url 'https://naver.jfrog.io/artifactory/maven/'
+        }
     }
 }
-rootProject.name = "MenuRecommend"
+rootProject.name = "menu_recommend"
 include ':app'

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main_background">#F4ECDB</color>
+    <color name="main_title_text_view">#C9DCD9</color>
+    <color name="main_title_color">#0F529C</color>
+    <color name="menu_background">#A8CC34</color>
+    <color name="menu_inner_background">#F1EFA0</color>
+    <color name="restaurant_info_background">#D8D8D8</color>
+    <color name="menu_background_blue">#55A1FD</color>
+    <color name="menu_background_blue2">#3D7EFB</color>
+    <color name="menu_background_blue3">#97BDFB</color>
+    <color name="sky_blue">#CCE8F6</color>
 </resources>
