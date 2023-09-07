@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kr.ac.tukorea.recommend.menu.databinding.ActivityMainBinding
+import kr.ac.tukorea.recommend.menu.util.RestaurantAdapter
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding

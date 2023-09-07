@@ -17,9 +17,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="이름"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textStyle="bold"
+            android:layout_marginEnd="10dp"
             app:layout_constraintBottom_toTopOf="@id/category"
-            app:layout_constraintEnd_toStartOf="@id/reviewCount"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
             app:layout_constraintStart_toStartOf="@id/restaurantInfoLayout"
             app:layout_constraintTop_toTopOf="@id/restaurantInfoLayout" />
 
@@ -52,9 +56,11 @@
         <TextView
             android:id="@+id/reviewCount"
             style="@style/info_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="리뷰"
+            android:text="리뷰 999+"
+            android:gravity="start"
+            app:layout_constraintStart_toStartOf="@id/guideline"
             app:layout_constraintBaseline_toBaselineOf="@id/rate"
             app:layout_constraintEnd_toStartOf="@+id/reviewStar"
             android:layout_marginEnd="10dp"/>
@@ -63,7 +69,7 @@
             android:id="@+id/rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="별점"
+            android:text="0.00"
             style="@style/info_text"
             android:layout_marginStart="10dp"
             app:layout_constraintBaseline_toBaselineOf="@id/restaurantName"
@@ -97,5 +103,14 @@
             app:layout_constraintStart_toStartOf="@id/reviewStar"
             app:layout_constraintEnd_toEndOf="@id/reviewStar"
             app:layout_constraintBottom_toBottomOf="@id/address"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.59"
+            app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
